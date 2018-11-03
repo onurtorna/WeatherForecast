@@ -10,5 +10,9 @@ import Foundation
 
 final class ForecastResponse: Response {
 
-    // TODO: To be implemented
+    /// City of the forecast
+    var city: City?
+
+    /// Weather information list of the forecast
+    var list: [WeatherInformation]?
 }
