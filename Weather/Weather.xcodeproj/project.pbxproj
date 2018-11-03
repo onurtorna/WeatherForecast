@@ -56,6 +56,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10575A07218D8CD0008FCF39 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				1070EE0F218A411B00E5BDF0 /* LaunchScreen.storyboard */,
+				1070EE0A218A411700E5BDF0 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		10575A08218D8CEA008FCF39 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1070EE0D218A411B00E5BDF0 /* Assets.xcassets */,
+				1070EE12218A411B00E5BDF0 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		10575A09218D8D21008FCF39 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1070EE08218A411700E5BDF0 /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		1070EDFA218A411700E5BDF0 = {
 			isa = PBXGroup;
 			children = (
@@ -78,11 +104,9 @@
 			isa = PBXGroup;
 			children = (
 				1070EE06218A411700E5BDF0 /* AppDelegate.swift */,
-				1070EE08218A411700E5BDF0 /* ViewController.swift */,
-				1070EE0A218A411700E5BDF0 /* Main.storyboard */,
-				1070EE0D218A411B00E5BDF0 /* Assets.xcassets */,
-				1070EE0F218A411B00E5BDF0 /* LaunchScreen.storyboard */,
-				1070EE12218A411B00E5BDF0 /* Info.plist */,
+				10575A08218D8CEA008FCF39 /* Resources */,
+				10575A07218D8CD0008FCF39 /* Storyboards */,
+				10575A09218D8D21008FCF39 /* Scenes */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -361,7 +385,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -379,7 +403,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Weather/Info.plist;
+				INFOPLIST_FILE = Weather/Resources/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
