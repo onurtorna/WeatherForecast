@@ -20,6 +20,7 @@ final class TodayViewController: UIViewController {
     @IBOutlet private weak var windDirectionLabel: UILabel!
     @IBOutlet private weak var shareButton: UIButton!
 
+    var viewModel = TodayViewModel()
 }
 
 // MARK: - StoryboardLoadable
