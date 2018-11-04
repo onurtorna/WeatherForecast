@@ -13,4 +13,9 @@ enum Global {
     enum APIKey {
         static let openWeatherMap = "56cd6906e790d366a075964a27bd10b2"
     }
+
+    enum Storyboard {
+        static let landing = "Main"
+        static let forecast = "Forecast"
+    }
 }

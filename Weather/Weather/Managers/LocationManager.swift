@@ -12,6 +12,13 @@ final class LocationManager: CLLocationManager {
 
     static var shared: LocationManager!
 
+    var authorizationStatus = CLLocationManager.authorizationStatus()
+
+    var isPermissionGranted: Bool {
+        return authorizationStatus == .authorizedWhenInUse
+            || authorizationStatus == .authorizedAlways
+    }
+
     static func initializeManager() {
 
         shared = LocationManager()
@@ -27,6 +34,8 @@ extension LocationManager: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager,
                          didChangeAuthorization status: CLAuthorizationStatus) {
+
+        authorizationStatus = status
         // TODO: Show warning and use saved coordinates if can
     }
 

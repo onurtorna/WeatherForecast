@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="9XB-He-Xq8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UBz-cU-yNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="s23-mg-jss" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mHX-Pp-n38">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="d1g-DT-g2j"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="tabTodayInactive" selectedImage="tabTodayActive" id="iw0-JW-81c"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3994" y="-383"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="D5D-zK-MCF">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pX-hc-IVl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="uyN-DL-mjD" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="apx-Ga-bdU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fZH-h6-cCw"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" image="tabForecastInactive" selectedImage="tabForecastActive" id="rnD-QD-Pce"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="3994" y="-1121"/>
+        </scene>
+        <!--Forecast Tab Bar Controller-->
+        <scene sceneID="2wA-2t-Sme">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5jD-O3-XcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tabBarController storyboardIdentifier="ForecastTabBarController" id="ENC-B9-F06" customClass="ForecastTabBarController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oiw-ln-iYY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="uyN-DL-mjD" kind="relationship" relationship="viewControllers" id="MkM-Kv-UiX"/>
+                        <segue destination="s23-mg-jss" kind="relationship" relationship="viewControllers" id="heI-kV-LuU"/>
+                    </connections>
+                </tabBarController>
+            </objects>
+            <point key="canvasLocation" x="3068" y="-820"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tabForecastActive" width="25" height="25"/>
+        <image name="tabForecastInactive" width="25" height="25"/>
+        <image name="tabTodayActive" width="25" height="25"/>
+        <image name="tabTodayInactive" width="25" height="25"/>
+    </resources>
+</document>
