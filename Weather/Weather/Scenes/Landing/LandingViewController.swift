@@ -57,8 +57,10 @@ private extension LandingViewController {
 
         if LocationManager.shared.isPermissionGranted {
 
-            let tabBarController = ForecastTabBarController.loadFromStoryboard()
-            show(tabBarController, sender: nil)
+            let forecastStoryboard = UIStoryboard(name: Global.Storyboard.forecast, bundle: nil)
+            if let viewController = forecastStoryboard.instantiateInitialViewController() {
+                show(viewController, sender: nil)
+            }
         }
     }
 }
