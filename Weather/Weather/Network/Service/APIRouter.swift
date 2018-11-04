@@ -10,8 +10,8 @@ import Alamofire
 
 enum APIRouter {
 
-    case today(lat: Int, lon: Int)
-    case forecast(lat: Int, lon: Int)
+    case today(lat: Double, lon: Double)
+    case forecast(lat: Double, lon: Double)
 
     // MARK: - Request
     var request: Alamofire.DataRequest {

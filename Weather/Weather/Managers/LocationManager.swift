@@ -14,6 +14,8 @@ final class LocationManager: CLLocationManager {
 
     var authorizationStatus = CLLocationManager.authorizationStatus()
 
+    var currentLocation: CLLocation?
+
     var isPermissionGranted: Bool {
         return authorizationStatus == .authorizedWhenInUse
             || authorizationStatus == .authorizedAlways
@@ -41,6 +43,7 @@ extension LocationManager: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager,
                          didUpdateLocations locations: [CLLocation]) {
-        // TODO: Fetch forecast
+
+        currentLocation = locations.first
     }
 }

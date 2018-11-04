@@ -13,15 +13,37 @@ final class TodayState {
     enum Change {
         case loading(Bool)
         case error(message: String?)
-        case dataFetch
+        case dataFetch(WeatherInformation?)
     }
 
     var onChange: ((TodayState.Change) -> Void)?
+
+    /// Indicates loading state
+    var isLoading = false {
+        didSet {
+            onChange?(.loading(isLoading))
+        }
+    }
+
+    /// Received error message
+    var errorMessage: String? {
+        didSet {
+            onChange?(.error(message: errorMessage))
+        }
+    }
+
+    /// Current weather information
+    var weatherInformation: WeatherInformation? {
+        didSet {
+            onChange?(.dataFetch(weatherInformation))
+        }
+    }
 }
 
 final class TodayViewModel {
 
-    private var state = TodayState()
+    private let state = TodayState()
+    private let dataController = TodayDataController()
 
     var stateChangeHandler: ((TodayState.Change) -> Void)? {
         get {
@@ -30,6 +52,33 @@ final class TodayViewModel {
 
         set {
             state.onChange = newValue
+        }
+    }
+}
+
+extension TodayViewModel {
+
+    func fetchCurrentWeather() {
+
+        let currentCoordinate = LocationManager.shared.currentLocation?.coordinate
+
+        guard let latitude = currentCoordinate?.latitude,
+            let longtitude = currentCoordinate?.longitude else {
+
+                state.errorMessage = "Location cannot be fetched."
+                return
+        }
+
+        state.isLoading = true
+        dataController.fetchTodaysWeather(
+            latitude: latitude,
+            longtitude: longtitude) { [weak self] (info, error) in
+
+                self?.state.isLoading = false
+
+                guard let strongSelf = self else { return }
+
+                strongSelf.state.weatherInformation = info
         }
     }
 }

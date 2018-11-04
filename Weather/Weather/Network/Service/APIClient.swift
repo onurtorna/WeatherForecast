@@ -10,8 +10,8 @@ import Alamofire
 
 final class APIClient {
 
-    static func todayWeather(latitude: Int,
-                             longtitude: Int,
+    static func todayWeather(latitude: Double,
+                             longtitude: Double,
                              completion: @escaping (WeatherInformation?, Error?) -> Void) {
 
         APIRouter.today(lat: latitude,
@@ -25,8 +25,8 @@ final class APIClient {
     }
 
     /// Fetches 5 day weather forecast for the location
-    static func weatherForecast(latitude: Int,
-                                longtitude: Int,
+    static func weatherForecast(latitude: Double,
+                                longtitude: Double,
                                 completion: @escaping (ForecastResponse?, Error?) -> Void) {
 
         APIRouter.forecast(lat: latitude,

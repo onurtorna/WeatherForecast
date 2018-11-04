@@ -18,7 +18,7 @@ final class ForecastRequest {
         static let unitsValue = "metric"
     }
 
-    static func generateParameters(lat: Int, lon: Int) -> Parameters {
+    static func generateParameters(lat: Double, lon: Double) -> Parameters {
 
         return [Mapping.appIDKey: Global.APIKey.openWeatherMap,
                 Mapping.latitudeKey: lat,
