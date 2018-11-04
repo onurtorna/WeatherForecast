@@ -19,6 +19,8 @@ struct WeatherInformation: Codable, Response {
 
     var clouds: Clouds?
 
+    var precipitation: Precipitation?
+
     var wind: Wind?
 
     var rain: Rain?
@@ -35,5 +37,6 @@ struct WeatherInformation: Codable, Response {
         case wind
         case rain
         case name
+        case precipitation
     }
 }
