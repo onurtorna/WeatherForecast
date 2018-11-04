@@ -30,6 +30,7 @@
 		10575A3D218F4987008FCF39 /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10575A39218F4987008FCF39 /* ProximaNova-Regular.otf */; };
 		10575A3E218F4987008FCF39 /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10575A3A218F4987008FCF39 /* ProximaNova-Semibold.otf */; };
 		10575A3F218F4987008FCF39 /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10575A3B218F4987008FCF39 /* ProximaNova-Bold.otf */; };
+		10575A42218F641A008FCF39 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10575A41218F641A008FCF39 /* LocationManager.swift */; };
 		1070EE07218A411700E5BDF0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070EE06218A411700E5BDF0 /* AppDelegate.swift */; };
 		1070EE09218A411700E5BDF0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1070EE08218A411700E5BDF0 /* ViewController.swift */; };
 		1070EE0C218A411700E5BDF0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1070EE0A218A411700E5BDF0 /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 		10575A39218F4987008FCF39 /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Regular.otf"; path = "../../../../../../../../Desktop/STRV/Assets/Font/ProximaNova-Regular.otf"; sourceTree = "<group>"; };
 		10575A3A218F4987008FCF39 /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Semibold.otf"; path = "../../../../../../../../Desktop/STRV/Assets/Font/ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
 		10575A3B218F4987008FCF39 /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ProximaNova-Bold.otf"; path = "../../../../../../../../Desktop/STRV/Assets/Font/ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		10575A41218F641A008FCF39 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		1070EE03218A411700E5BDF0 /* Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1070EE06218A411700E5BDF0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1070EE08218A411700E5BDF0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		10575A40218F63D6008FCF39 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				10575A41218F641A008FCF39 /* LocationManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
 		1070EDFA218A411700E5BDF0 = {
 			isa = PBXGroup;
 			children = (
@@ -239,6 +249,7 @@
 		1070EE05218A411700E5BDF0 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				10575A40218F63D6008FCF39 /* Managers */,
 				1070EE06218A411700E5BDF0 /* AppDelegate.swift */,
 				10575A21218DBE51008FCF39 /* Global.swift */,
 				10575A23218DE484008FCF39 /* Models */,
@@ -445,6 +456,7 @@
 				10575A29218DEB3B008FCF39 /* Clouds.swift in Sources */,
 				10575A22218DBE51008FCF39 /* Global.swift in Sources */,
 				10575A34218F48EB008FCF39 /* NibLoadable.swift in Sources */,
+				10575A42218F641A008FCF39 /* LocationManager.swift in Sources */,
 				10575A18218DBADF008FCF39 /* ErrorHandler.swift in Sources */,
 				10575A31218DEDCE008FCF39 /* WeatherInformation.swift in Sources */,
 				10575A36218F48F8008FCF39 /* StoryboardLoadable.swift in Sources */,
