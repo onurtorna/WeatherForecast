@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WeatherInformation: Codable {
+struct WeatherInformation: Codable, Response {
 
     /// Date string in yyyy-MM-dd HH:mm:ss format
     var date: String?
@@ -23,6 +23,9 @@ struct WeatherInformation: Codable {
 
     var rain: Rain?
 
+    /// Name of the location
+    var name: String?
+
     enum CodingKeys: String, CodingKey {
 
         case date = "dt_txt"
@@ -31,5 +34,6 @@ struct WeatherInformation: Codable {
         case clouds
         case wind
         case rain
+        case name
     }
 }

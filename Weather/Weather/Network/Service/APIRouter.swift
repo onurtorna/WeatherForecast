@@ -10,6 +10,7 @@ import Alamofire
 
 enum APIRouter {
 
+    case today(lat: Int, lon: Int)
     case forecast(lat: Int, lon: Int)
 
     // MARK: - Request
@@ -31,7 +32,8 @@ enum APIRouter {
     var method: HTTPMethod {
 
         switch self {
-        case .forecast:
+        case .forecast,
+             .today:
             return .get
         }
     }
@@ -49,6 +51,9 @@ enum APIRouter {
         switch self {
         case .forecast:
             return "forecast"
+
+        case .today:
+            return "weather"
         }
     }
 
@@ -62,6 +67,9 @@ enum APIRouter {
 
         switch self {
         case let .forecast(lat: lat, lon: lon):
+            return ForecastRequest.generateParameters(lat: lat,
+                                                      lon: lon)
+        case .today(let lat, let lon):
             return ForecastRequest.generateParameters(lat: lat,
                                                       lon: lon)
         }
