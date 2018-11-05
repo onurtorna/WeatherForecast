@@ -10,17 +10,41 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Forecast View Controller-->
         <scene sceneID="9XB-He-Xq8">
             <objects>
-                <viewController id="s23-mg-jss" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForecastViewController" id="s23-mg-jss" customClass="ForecastViewController" customModule="Weather" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mHX-Pp-n38">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WWw-G3-Vu8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="PYJ-Dk-0Sq"/>
+                                </constraints>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BdC-yh-NEh">
+                                <rect key="frame" x="0.0" y="2" width="375" height="552"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="WWw-G3-Vu8" firstAttribute="leading" secondItem="d1g-DT-g2j" secondAttribute="leading" id="7P9-4w-3nA"/>
+                            <constraint firstItem="d1g-DT-g2j" firstAttribute="bottom" secondItem="BdC-yh-NEh" secondAttribute="bottom" id="7Ql-lK-2Sj"/>
+                            <constraint firstItem="BdC-yh-NEh" firstAttribute="leading" secondItem="d1g-DT-g2j" secondAttribute="leading" id="AuK-Cv-uij"/>
+                            <constraint firstItem="d1g-DT-g2j" firstAttribute="trailing" secondItem="BdC-yh-NEh" secondAttribute="trailing" id="CKQ-1b-lBd"/>
+                            <constraint firstItem="BdC-yh-NEh" firstAttribute="top" secondItem="WWw-G3-Vu8" secondAttribute="bottom" id="JWJ-Gl-MCf"/>
+                            <constraint firstItem="d1g-DT-g2j" firstAttribute="trailing" secondItem="WWw-G3-Vu8" secondAttribute="trailing" id="URV-l3-LvR"/>
+                            <constraint firstItem="WWw-G3-Vu8" firstAttribute="top" secondItem="d1g-DT-g2j" secondAttribute="top" id="VVY-nh-cUx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="d1g-DT-g2j"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="tabTodayInactive" selectedImage="tabTodayActive" id="iw0-JW-81c"/>
+                    <connections>
+                        <outlet property="tableView" destination="BdC-yh-NEh" id="J6V-hW-Hmy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UBz-cU-yNr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

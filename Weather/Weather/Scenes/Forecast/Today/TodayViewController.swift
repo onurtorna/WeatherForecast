@@ -22,6 +22,11 @@ final class TodayViewController: UIViewController {
 
     var viewModel = TodayViewModel()
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tabBarController?.title = "Today"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
