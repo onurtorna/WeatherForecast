@@ -14,6 +14,7 @@
 		1018BE1C2190C6BC0060326C /* ForecastViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018BE1B2190C6BC0060326C /* ForecastViewModel.swift */; };
 		1018BE202190C90C0060326C /* ForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018BE1F2190C90C0060326C /* ForecastTableViewCell.swift */; };
 		1018BE222190C9260060326C /* ForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1018BE212190C9260060326C /* ForecastTableViewCell.xib */; };
+		1018BE242190D53C0060326C /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018BE232190D53C0060326C /* DateHelper.swift */; };
 		10575A0C218DB6D4008FCF39 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10575A0B218DB6D4008FCF39 /* Network.swift */; };
 		10575A0F218DB77F008FCF39 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10575A0E218DB77F008FCF39 /* APIRouter.swift */; };
 		10575A12218DB90F008FCF39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10575A11218DB90F008FCF39 /* NetworkManager.swift */; };
@@ -72,6 +73,7 @@
 		1018BE1B2190C6BC0060326C /* ForecastViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastViewModel.swift; sourceTree = "<group>"; };
 		1018BE1F2190C90C0060326C /* ForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastTableViewCell.swift; sourceTree = "<group>"; };
 		1018BE212190C9260060326C /* ForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ForecastTableViewCell.xib; sourceTree = "<group>"; };
+		1018BE232190D53C0060326C /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		10575A0B218DB6D4008FCF39 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		10575A0E218DB77F008FCF39 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		10575A11218DB90F008FCF39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 			isa = PBXGroup;
 			children = (
 				1018BE122190BD360060326C /* MetricHelper.swift */,
+				1018BE232190D53C0060326C /* DateHelper.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				10575A0F218DB77F008FCF39 /* APIRouter.swift in Sources */,
 				10575A27218DEA3E008FCF39 /* MainWeather.swift in Sources */,
 				10575A20218DBCAC008FCF39 /* ForecastRequest.swift in Sources */,
+				1018BE242190D53C0060326C /* DateHelper.swift in Sources */,
 				10575A2D218DEC5E008FCF39 /* Rain.swift in Sources */,
 				1018BE1C2190C6BC0060326C /* ForecastViewModel.swift in Sources */,
 				10575A12218DB90F008FCF39 /* NetworkManager.swift in Sources */,

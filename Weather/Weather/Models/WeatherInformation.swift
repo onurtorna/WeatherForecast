@@ -10,9 +10,6 @@ import Foundation
 
 struct WeatherInformation: Codable, Response {
 
-    /// Date string in yyyy-MM-dd HH:mm:ss format
-    var date: String?
-
     var main: MainWeather?
 
     var weather: [WeatherDetail]?
@@ -27,6 +24,14 @@ struct WeatherInformation: Codable, Response {
 
     /// Name of the location
     var name: String?
+
+    /// Date string in yyyy-MM-dd HH:mm:ss format
+    var date: String?
+
+    /// Day of the week of the weather info
+    var weekDay: String {
+        return DateHelper.dayOfTheWeek(date)
+    }
 
     enum CodingKeys: String, CodingKey {
 

@@ -30,8 +30,9 @@ final class ForecastTableViewCell: UITableViewCell, NibLoadable {
         degreeLabel.text = MetricHelper.roundedUnit(for: weatherInfo.main?.temperature,
                                                     unit: .shortDegree)
         weatherDescriptionLabel.text = weatherInfo.weather?.first?.main
+        hourLabel.text = DateHelper.shortHourFromDate(weatherInfo.date)
 
-        // TODO: set hour and weather image
+        // TODO: set weather image
     }
 
     func hideDivider() {
