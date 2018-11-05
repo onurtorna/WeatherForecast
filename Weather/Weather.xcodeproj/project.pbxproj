@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1018BE132190BD360060326C /* MetricHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1018BE122190BD360060326C /* MetricHelper.swift */; };
 		10575A0C218DB6D4008FCF39 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10575A0B218DB6D4008FCF39 /* Network.swift */; };
 		10575A0F218DB77F008FCF39 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10575A0E218DB77F008FCF39 /* APIRouter.swift */; };
 		10575A12218DB90F008FCF39 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10575A11218DB90F008FCF39 /* NetworkManager.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1018BE122190BD360060326C /* MetricHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricHelper.swift; sourceTree = "<group>"; };
 		10575A0B218DB6D4008FCF39 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		10575A0E218DB77F008FCF39 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
 		10575A11218DB90F008FCF39 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
@@ -123,6 +125,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1018BE112190BD130060326C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1018BE122190BD360060326C /* MetricHelper.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		10575A07218D8CD0008FCF39 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +320,7 @@
 				10575A08218D8CEA008FCF39 /* Resources */,
 				10575A09218D8D21008FCF39 /* Scenes */,
 				10575A07218D8CD0008FCF39 /* Storyboards */,
+				1018BE112190BD130060326C /* Utils */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -526,6 +537,7 @@
 				10575A31218DEDCE008FCF39 /* WeatherInformation.swift in Sources */,
 				10575A36218F48F8008FCF39 /* StoryboardLoadable.swift in Sources */,
 				10575A16218DBA79008FCF39 /* ServiceManager.swift in Sources */,
+				1018BE132190BD360060326C /* MetricHelper.swift in Sources */,
 				10575A4C218F73CC008FCF39 /* TodayViewController.swift in Sources */,
 				10E59BD8218F8C5400D60C94 /* TodayDataProtocol.swift in Sources */,
 				10575A2F218DED15008FCF39 /* WeatherDetail.swift in Sources */,

@@ -17,17 +17,7 @@ struct MainWeather: Codable {
     var pressure: Double?
 
     /// Humidity percentage
-    var humidity: Int?
-
-    /// Rounded temperature value as String
-    var temperatureString: String {
-
-        if let temperature = temperature {
-            return String(Int(temperature))
-        }
-
-        return ""
-    }
+    var humidity: Double?
 
     enum CodingKeys: String, CodingKey {
         case temperature = "temp"

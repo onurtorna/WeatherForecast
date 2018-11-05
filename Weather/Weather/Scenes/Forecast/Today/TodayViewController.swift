@@ -50,23 +50,23 @@ private extension TodayViewController {
     func customizeViews(weatherInfo: WeatherInformation?) {
 
         guard let weatherInfo = weatherInfo else { return }
-        print(weatherInfo)
+
         locationLabel.text = weatherInfo.name
         let weatherText = weatherInfo.weather?.first?.main ?? ""
-        let degreeText = weatherInfo.main?.temperatureString ?? "" + "°C"
+        let degreeText = MetricHelper.roundedUnit(for: weatherInfo.main?.temperature,
+                                                  unit: .degree)
         degreeExplanationLabel.text = degreeText + " | " + weatherText
-        rainLabel.text = "\(weatherInfo.main?.humidity ?? 0)%"
-        pressureLabel.text = "\(Int(weatherInfo.main?.pressure ?? 0)) hPa"
-        windLabel.text = "\(Int(weatherInfo.wind?.speed ?? 0)) m/h"
-
-        let precipitationText: String
-        if let precipitation = weatherInfo.precipitation?.value {
-            precipitationText = "\(Int(precipitation)) + mm"
-        } else {
-            precipitationText = "-"
-        }
-        precipitationLabel.text = precipitationText
+        rainLabel.text = MetricHelper.roundedUnit(for: weatherInfo.main?.humidity,
+                                                  unit: .humidity)
+        pressureLabel.text = MetricHelper.roundedUnit(for: weatherInfo.main?.pressure,
+                                                      unit: .pressure)
+        windLabel.text = MetricHelper.roundedUnit(for: weatherInfo.wind?.speed,
+                                                  unit: .speed)
+        windDirectionLabel.text = MetricHelper.compassDirection(for: weatherInfo.wind?.degree)
+        precipitationLabel.text = MetricHelper.roundedUnit(for: weatherInfo.precipitation?.value,
+                                                           unit: .precipitation)
     }
+
 }
 
 // MARK: - StoryboardLoadable

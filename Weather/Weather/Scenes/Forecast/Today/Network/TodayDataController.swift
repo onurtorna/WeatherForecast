@@ -14,9 +14,10 @@ final class TodayDataController: TodayDataProtocol {
                             longtitude: Double,
                             completion: @escaping (WeatherInformation?, Error?) -> Void) {
 
-        APIClient.weatherForecast(latitude: latitude,
-                                  longtitude: longtitude) { (response, error) in
-                                    completion(response?.list?.first, error)
+        APIClient.todayWeather(latitude: latitude,
+                               longtitude: longtitude) { (info, error) in
+
+                                completion(info, error)
         }
     }
 }
