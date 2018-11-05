@@ -12,6 +12,7 @@ final class MetricHelper {
 
     enum Unit: String {
         case degree = "°C"
+        case shortDegree = "°"
         case speed = "m/h"
         case pressure = "hPa"
         case humidity = "%"
@@ -25,45 +26,6 @@ final class MetricHelper {
         }
 
         return "-"
-    }
-
-    /// Returns rounded down degree string with metric from double
-    static func roundedDegree(_ degree: Double?) -> String {
-
-        if let degree = degree {
-            return String(Int(degree)) + "°C"
-        }
-
-        return ""
-    }
-
-    /// Returns rounded down speed string with metric as m/h
-    static func roundedSpeed(_ speed: Double?) -> String {
-
-        if let speed = speed {
-            return "\(Int(speed)) m/h"
-        }
-        return ""
-    }
-
-    /// Returns pressure speed with hPa unit
-    static func roundedPressure(_ pressure: Double?) -> String {
-
-        if let pressure = pressure {
-            return "\(Int(pressure)) hPa"
-        }
-
-        return ""
-    }
-
-    /// Returns rounded humidity as percentage
-    static func roundedHumidity(_ humidity: Double?) -> String {
-
-        if let humidity = humidity {
-            return "\(Int(humidity)) %"
-        }
-
-        return ""
     }
 
     /// Returns compass direction with given degree
