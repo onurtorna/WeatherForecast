@@ -39,7 +39,10 @@ final class ForecastState {
         }
     }
 
-    var forecastList: [WeatherInformation]? {
+    var forecastList: [WeatherInformation]?
+
+    /// Forecast list grouped by week of the day
+    var forecastDayList: [(weekDay: String, list: [WeatherInformation])]? {
         didSet {
             onChange?(.dataFetch)
         }
@@ -61,6 +64,52 @@ final class ForecastViewModel {
         }
     }
 
+    var forecastItemsSectionCount: Int {
+        return state.forecastDayList?.count ?? 0
+    }
+
+    func forecastItemCount(in section: Int) -> Int {
+        return state.forecastDayList?[section].list.count ?? 0
+    }
+
+    func forecastSectionName(_ section: Int) -> String? {
+        return state.forecastDayList?[section].weekDay
+    }
+
+    func forecastItem(at index: Int, section: Int) -> WeatherInformation? {
+        return state.forecastDayList?[section].list[index]
+    }
+}
+
+// MARK: - Helpers
+private extension ForecastViewModel {
+
+    /// Groups forecast item list by week day and updates related state list
+    func groupForecastByWeekDay() {
+
+        guard let forecastList = state.forecastList else { return }
+
+        var forecastDictionary: [String: [WeatherInformation]] = [:]
+        for ins in forecastList {
+
+            var weekDayList = forecastDictionary[ins.weekDay]
+            if weekDayList == nil {
+                forecastDictionary[ins.weekDay] = [ins]
+            } else {
+                weekDayList?.append(ins)
+                forecastDictionary[ins.weekDay] = weekDayList
+            }
+        }
+
+        var temporaryDayList: [(weekDay: String, list: [WeatherInformation])] = []
+        for item in forecastDictionary {
+            let key = item.key
+            let value = item.value
+            temporaryDayList.append((weekDay: key, list: value))
+        }
+
+        state.forecastDayList = temporaryDayList
+    }
 }
 
 // MARK: - Network
@@ -90,6 +139,7 @@ extension ForecastViewModel {
 
                 strongSelf.state.city = city
                 strongSelf.state.forecastList = forecastList
+                strongSelf.groupForecastByWeekDay()
         }
 
     }
