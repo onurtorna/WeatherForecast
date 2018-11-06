@@ -27,12 +27,16 @@ final class ForecastTableViewCell: UITableViewCell, NibLoadable {
     func customize(with weatherInfo: WeatherInformation?) {
 
         guard let weatherInfo = weatherInfo else { return }
+
         degreeLabel.text = MetricHelper.roundedUnit(for: weatherInfo.main?.temperature,
                                                     unit: .shortDegree)
         weatherDescriptionLabel.text = weatherInfo.weather?.first?.main
         hourLabel.text = DateHelper.shortHourFromDate(weatherInfo.date)
         dividerImageView.isHidden = false
-        // TODO: set weather image
+
+        if let icon = weatherInfo.weather?.first?.icon {
+            weatherImageView.image = icon.image(with: .medium)
+        }
     }
 
     func hideDivider() {

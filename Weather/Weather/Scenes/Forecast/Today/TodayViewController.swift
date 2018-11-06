@@ -62,6 +62,10 @@ private extension TodayViewController {
 
         guard let weatherInfo = weatherInfo else { return }
 
+        if let icon = weatherInfo.weather?.first?.icon {
+            mainWeatherImageView.image = icon.image(with: .large)
+        }
+
         locationLabel.text = weatherInfo.name
         let weatherText = weatherInfo.weather?.first?.main ?? ""
         let degreeText = MetricHelper.roundedUnit(for: weatherInfo.main?.temperature,

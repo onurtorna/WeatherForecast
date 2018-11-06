@@ -17,5 +17,5 @@ struct WeatherDetail: Codable {
     var description: String?
 
     /// Icon id related to weather
-    var icon: String?
+    var icon: WeatherIcon?
 }
