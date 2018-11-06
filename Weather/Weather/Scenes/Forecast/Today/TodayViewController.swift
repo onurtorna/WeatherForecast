@@ -22,6 +22,9 @@ final class TodayViewController: UIViewController {
 
     var viewModel = TodayViewModel()
 
+    /// Text to share when share button is tapped
+    private var shareText: String?
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tabBarController?.title = "Today"
@@ -73,6 +76,12 @@ private extension TodayViewController {
         windDirectionLabel.text = MetricHelper.compassDirection(for: weatherInfo.wind?.degree)
         precipitationLabel.text = MetricHelper.roundedUnit(for: weatherInfo.precipitation?.value,
                                                            unit: .precipitation)
+
+        shareText = "Just checked weather on Weather App !\nIt is " + degreeText
+        if let locationName = weatherInfo.name,
+            let shareText = shareText {
+            self.shareText = shareText + " in " + locationName
+        }
     }
 
     func applyStyling() {
@@ -94,6 +103,18 @@ private extension TodayViewController {
         shareButton.setTitleColor(.orangeish, for: .normal)
     }
 
+}
+
+// MARK: - Actions
+private extension TodayViewController {
+
+    @IBAction func shareButtonTapped(_ sender: Any) {
+
+        let items: [Any] = [shareText ?? ""]
+        let activityController = UIActivityViewController(activityItems: items,
+                                                          applicationActivities: nil)
+        present(activityController, animated: true)
+    }
 }
 
 // MARK: - StoryboardLoadable
