@@ -67,7 +67,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r5X-gw-gwb">
                                 <rect key="frame" x="46.5" y="98.5" width="282" height="317"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clearSkyDayLarge" translatesAutoresizingMaskIntoConstraints="NO" id="gvS-ZC-li0">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gvS-ZC-li0">
                                         <rect key="frame" x="91" y="0.0" width="100" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="7DO-Mm-eUz"/>
@@ -314,7 +314,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="clearSkyDayLarge" width="100" height="100"/>
         <image name="divider" width="110" height="1"/>
         <image name="humiditySmall" width="30" height="30"/>
         <image name="location" width="12" height="12"/>

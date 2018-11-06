@@ -18,27 +18,27 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="125.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clearSkyNightMedium" translatesAutoresizingMaskIntoConstraints="NO" id="aph-5E-eB1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aph-5E-eB1">
                         <rect key="frame" x="18" y="15" width="60" height="60"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="60" id="8jm-vD-hXd"/>
                             <constraint firstAttribute="height" constant="60" id="Dsg-7S-Ju1"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-8i-d80">
-                        <rect key="frame" x="104" y="26" width="46" height="21"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux7-8i-d80">
+                        <rect key="frame" x="104" y="26" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clear" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxb-Os-h1e">
-                        <rect key="frame" x="104" y="52" width="36" height="18"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cxb-Os-h1e">
+                        <rect key="frame" x="104" y="31" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-sm-CUU">
-                        <rect key="frame" x="299.5" y="15" width="57.5" height="60"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3M-sm-CUU">
+                        <rect key="frame" x="357" y="45" width="0.0" height="0.0"/>
                         <fontDescription key="fontDescription" type="system" pointSize="50"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -77,7 +77,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="clearSkyNightMedium" width="60" height="60"/>
         <image name="divider" width="110" height="1"/>
     </resources>
 </document>
