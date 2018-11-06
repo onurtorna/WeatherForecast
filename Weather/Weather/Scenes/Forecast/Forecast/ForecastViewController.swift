@@ -36,6 +36,11 @@ final class ForecastViewController: UIViewController {
 
         viewModel.stateChangeHandler = applyState(_:)
         viewModel.fetchForecast()
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateLocationInformation),
+                                               name: Global.Notification.locationChanged,
+                                               object: nil)
     }
 }
 
@@ -45,10 +50,10 @@ private extension ForecastViewController {
     func applyState(_ change: ForecastState.Change) {
 
         switch change {
-        case .loading(let isLoading):
+        case .loading:
             // TODO
             break
-        case .error(message: let message):
+        case .error:
             // TODO:
             break
 
@@ -59,6 +64,10 @@ private extension ForecastViewController {
         case .dataFetch:
             tableView.reloadData()
         }
+    }
+
+    @objc func updateLocationInformation() {
+        viewModel.fetchForecast()
     }
 }
 

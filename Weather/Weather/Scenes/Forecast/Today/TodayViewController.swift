@@ -37,7 +37,13 @@ final class TodayViewController: UIViewController {
 
         viewModel.stateChangeHandler = applyState(_:)
         viewModel.fetchCurrentWeather()
+
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(updateLocationInformation),
+                                               name: Global.Notification.locationChanged,
+                                               object: nil)
     }
+
 }
 
 // MARK: - Helpers
@@ -46,10 +52,10 @@ private extension TodayViewController {
     func applyState(_ change: TodayState.Change) {
 
         switch change {
-        case .loading(let isLoading):
+        case .loading:
         // TODO: Show Loading view
             break
-        case .error(message: let message):
+        case .error:
         // TODO: Show error
             break
 
@@ -107,6 +113,9 @@ private extension TodayViewController {
         shareButton.setTitleColor(.orangeish, for: .normal)
     }
 
+    @objc func updateLocationInformation() {
+        viewModel.fetchCurrentWeather()
+    }
 }
 
 // MARK: - Actions

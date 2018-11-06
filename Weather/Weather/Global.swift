@@ -18,4 +18,9 @@ enum Global {
         static let landing = "Main"
         static let forecast = "Forecast"
     }
+
+    enum Notification {
+        static let locationPermissionChanged = NSNotification.Name(rawValue: "LocationPermissionChanged")
+        static let locationChanged = NSNotification.Name(rawValue: "LocationChanged")
+    }
 }

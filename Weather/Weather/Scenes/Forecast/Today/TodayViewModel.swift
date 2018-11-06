@@ -60,10 +60,10 @@ extension TodayViewModel {
 
     func fetchCurrentWeather() {
 
-        let currentCoordinate = LocationManager.shared.currentLocation?.coordinate
+        let currentLocation = LocationManager.shared.currentLocation ??  LocationManager.shared.lastKnownLocation
 
-        guard let latitude = currentCoordinate?.latitude,
-            let longtitude = currentCoordinate?.longitude else {
+        guard let latitude = currentLocation?.coordinate.latitude,
+            let longtitude = currentLocation?.coordinate.longitude else {
 
                 state.errorMessage = "Location cannot be fetched."
                 return
