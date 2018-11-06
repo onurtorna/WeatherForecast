@@ -84,6 +84,11 @@ extension ForecastViewController: UITableViewDataSource {
         }
         let info = viewModel.forecastItem(at: indexPath.row, section: indexPath.section)
         cell.customize(with: info)
+        // Last cell in section
+        if viewModel.forecastItemCount(in: indexPath.section) == indexPath.row + 1 {
+            cell.hideDivider()
+        }
+
         return cell
     }
 }
@@ -95,9 +100,8 @@ extension ForecastViewController: UITableViewDelegate {
                    viewForHeaderInSection section: Int) -> UIView? {
 
         let headerView = UIView()
-        // TODO: Update colors, use font to header label
-        headerView.backgroundColor = UIColor.gray
-        headerView.layer.borderColor = UIColor.black.cgColor
+        headerView.backgroundColor = UIColor.white
+        headerView.layer.borderColor = UIColor.separator.cgColor
         headerView.layer.borderWidth = 1
         let titleLabel = UILabel()
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -108,6 +112,7 @@ extension ForecastViewController: UITableViewDelegate {
                                             constant: 0).isActive = true
 
         titleLabel.text = viewModel.forecastSectionName(section)?.uppercased()
+        LabelCustomizer.applyFont(label: titleLabel, font: .semiBold, size: 14, color: .lightBlack)
         return headerView
     }
 

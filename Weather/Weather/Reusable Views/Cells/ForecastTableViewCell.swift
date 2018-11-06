@@ -21,7 +21,7 @@ final class ForecastTableViewCell: UITableViewCell, NibLoadable {
 
         selectionStyle = .none
 
-        // TODO: Apply styling
+        applyStyling()
     }
 
     func customize(with weatherInfo: WeatherInformation?) {
@@ -31,11 +31,31 @@ final class ForecastTableViewCell: UITableViewCell, NibLoadable {
                                                     unit: .shortDegree)
         weatherDescriptionLabel.text = weatherInfo.weather?.first?.main
         hourLabel.text = DateHelper.shortHourFromDate(weatherInfo.date)
-
+        dividerImageView.isHidden = false
         // TODO: set weather image
     }
 
     func hideDivider() {
         dividerImageView.isHidden = true
+    }
+}
+
+// MARK: - Helpers
+private extension ForecastTableViewCell {
+
+    func applyStyling() {
+
+        LabelCustomizer.applyFont(label: degreeLabel,
+                                  font: .light,
+                                  size: 50,
+                                  color: .dodgerBlue)
+
+        LabelCustomizer.applyFont(label: weatherDescriptionLabel,
+                                  font: .regular,
+                                  size: 15)
+
+        LabelCustomizer.applyFont(label: hourLabel,
+                                  font: .semiBold,
+                                  size: 18)
     }
 }

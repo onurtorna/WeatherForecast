@@ -11,13 +11,13 @@ import UIKit
 final class TodayViewController: UIViewController {
 
     @IBOutlet private weak var locationLabel: UILabel!
-    @IBOutlet private weak var mainWeatherImageView: UIImageView!
     @IBOutlet private weak var degreeExplanationLabel: UILabel!
     @IBOutlet private weak var rainLabel: UILabel!
     @IBOutlet private weak var precipitationLabel: UILabel!
     @IBOutlet private weak var pressureLabel: UILabel!
     @IBOutlet private weak var windLabel: UILabel!
     @IBOutlet private weak var windDirectionLabel: UILabel!
+    @IBOutlet private weak var mainWeatherImageView: UIImageView!
     @IBOutlet private weak var shareButton: UIButton!
 
     var viewModel = TodayViewModel()
@@ -30,11 +30,14 @@ final class TodayViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        applyStyling()
+
         viewModel.stateChangeHandler = applyState(_:)
         viewModel.fetchCurrentWeather()
     }
 }
 
+// MARK: - Helpers
 private extension TodayViewController {
 
     func applyState(_ change: TodayState.Change) {
@@ -70,6 +73,25 @@ private extension TodayViewController {
         windDirectionLabel.text = MetricHelper.compassDirection(for: weatherInfo.wind?.degree)
         precipitationLabel.text = MetricHelper.roundedUnit(for: weatherInfo.precipitation?.value,
                                                            unit: .precipitation)
+    }
+
+    func applyStyling() {
+
+        LabelCustomizer.applyFont(label: locationLabel, font: .semiBold, size: 18)
+        LabelCustomizer.applyFont(label: rainLabel, font: .semiBold, size: 15)
+        LabelCustomizer.applyFont(label: precipitationLabel, font: .semiBold, size: 15)
+        LabelCustomizer.applyFont(label: pressureLabel, font: .semiBold, size: 15)
+        LabelCustomizer.applyFont(label: windLabel, font: .semiBold, size: 15)
+        LabelCustomizer.applyFont(label: windDirectionLabel, font: .semiBold, size: 15)
+        LabelCustomizer.applyFont(label: degreeExplanationLabel,
+                                  font: .semiBold,
+                                  size: 24,
+                                  color: .dodgerBlue)
+        LabelCustomizer.applyFont(label: shareButton.titleLabel,
+                                  font: .semiBold,
+                                  size: 18,
+                                  color: .orangeish)
+        shareButton.setTitleColor(.orangeish, for: .normal)
     }
 
 }
